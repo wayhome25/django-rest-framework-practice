@@ -197,4 +197,4 @@ pip-selfcheck.json
 
 # End of https://www.gitignore.io/api/django,python,pycharm,database,virtualenv
 
-.idea/*
+drf/.idea/*
