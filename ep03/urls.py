@@ -1,10 +1,18 @@
+from rest_framework.routers import DefaultRouter
+
+from django.urls.conf import include
 from django.urls.conf import path
 
 from ep03 import views
 
 app_name = 'ep03'
 
+router = DefaultRouter()
+router.register(r'posts', views.PostViewSet)
+router.register(r'user', views.UserViewSet)
+
+
 urlpatterns = [
-    path('posts/', views.PostListAPIView.as_view()),
-    path('posts/<int:pk>/', views.PostDetailAPIView.as_view()),
+    path('', include(router.urls)),
 ]
+
