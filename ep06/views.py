@@ -1,3 +1,4 @@
+from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
 
 from ep04.models import Post
@@ -7,6 +8,8 @@ from ep04.serializers import PostSerializer
 class PostViewSet(ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['title']
 
     def get_queryset(self):
         qs = super().get_queryset()
