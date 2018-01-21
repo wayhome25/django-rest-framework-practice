@@ -1,5 +1,6 @@
-from djagno.urls.conf import pathlib
+from django.urls.conf import path
 
+app_name = 'ep04'
 
 urlpatterns = [
 
